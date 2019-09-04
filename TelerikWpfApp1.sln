@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelerikWpfApp1", "TelerikWpfApp1\TelerikWpfApp1.csproj", "{163420CC-476F-475F-AACB-170AB44D174A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{163420CC-476F-475F-AACB-170AB44D174A}.Debug|x86.ActiveCfg = Debug|x86
+		{163420CC-476F-475F-AACB-170AB44D174A}.Debug|x86.Build.0 = Debug|x86
+		{163420CC-476F-475F-AACB-170AB44D174A}.Release|x86.ActiveCfg = Release|x86
+		{163420CC-476F-475F-AACB-170AB44D174A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F0F08EE-042E-4AB5-AEFF-636F754E5139}
+	EndGlobalSection
+EndGlobal
