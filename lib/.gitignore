@@ -1,5 +1,6 @@
-#DLLs
+#TELERIK
 .dll
+.xml
 
 # Prerequisites
 *.d
