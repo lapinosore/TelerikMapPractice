@@ -20,9 +20,6 @@
             <telerik:VisualizationLayer 
                    x:Name="VisLayer" ItemsSource="{Binding tMapPath2, ElementName=_thjis}" SelectionChanged="VisLayer_SelectionChanged"/>
 
-            <telerik:InformationLayer 
-               x:Name="InfLayer" ItemsSource="{Binding tMapPath, ElementName=_thjis}" />
-
         </telerik:RadMap>
 
     </Grid>

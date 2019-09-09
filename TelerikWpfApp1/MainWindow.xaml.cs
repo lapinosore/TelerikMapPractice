@@ -78,7 +78,7 @@ namespace TelerikWpfApp1
         }
     }
          
-    public class TechMapPath : MapPath
+    public class TechMapPath : PathData
     {
 
         public TechMapPath(Location p_startPoint, Location p_endPoint, byte p_groupIndex = 1)
@@ -87,27 +87,29 @@ namespace TelerikWpfApp1
             this.endPoint = p_endPoint;
             this.groupIndex = p_groupIndex;
 
-            MapQuadraticBezierSegment mapQuadraticBezierSegment = new MapQuadraticBezierSegment() { Point1 = this.middlePoint, Point2 = p_endPoint };
-            MapPathFigure mapPathFigure = new MapPathFigure() { StartPoint = p_startPoint, IsClosed = false };
+            QuadraticBezierSegmentData mapQuadraticBezierSegment = new QuadraticBezierSegmentData() { Point1 = this.middlePoint, Point2 = p_endPoint };
+            PathFigureData mapPathFigure = new PathFigureData() { StartPoint = p_startPoint, IsClosed = false };
             mapPathFigure.Segments.Add(mapQuadraticBezierSegment);
 
-            MapPathGeometry mapPathGeometry = new MapPathGeometry();
+            PathGeometryData mapPathGeometry = new PathGeometryData();
             mapPathGeometry.Figures.Add(mapPathFigure);
 
+            Brush stroke = Brushes.Transparent;
             this.Data = mapPathGeometry;
             switch (groupIndex)
             {
-                case 1: { this.Stroke = new SolidColorBrush(Colors.Red); break; }
-                case 2: { this.Stroke = new SolidColorBrush(Colors.Orange); break; }
-                case 3: { this.Stroke = new SolidColorBrush(Colors.Yellow); break; }
-                case 4: { this.Stroke = new SolidColorBrush(Colors.Green); break; }
-                case 5: { this.Stroke = new SolidColorBrush(Colors.LightBlue); break; }
-                case 6: { this.Stroke = new SolidColorBrush(Colors.Blue); break; }
-                case 7: { this.Stroke = new SolidColorBrush(Colors.Violet); break; }
-                case 8: { this.Stroke = new SolidColorBrush(Colors.Black); break; }
+                case 1: { stroke = new SolidColorBrush(Colors.Red); break; }
+                case 2: { stroke = new SolidColorBrush(Colors.Orange); break; }
+                case 3: { stroke = new SolidColorBrush(Colors.Yellow); break; }
+                case 4: { stroke = new SolidColorBrush(Colors.Green); break; }
+                case 5: { stroke = new SolidColorBrush(Colors.LightBlue); break; }
+                case 6: { stroke = new SolidColorBrush(Colors.Blue); break; }
+                case 7: { stroke = new SolidColorBrush(Colors.Violet); break; }
+                case 8: { stroke = new SolidColorBrush(Colors.Black); break; }
             }
             this.HighlightFill = new MapShapeFill() { Stroke = new SolidColorBrush(Colors.Green), StrokeThickness = 2 };
-            this.StrokeThickness = 2;
+            this.ShapeFill = new MapShapeFill() { Stroke = stroke, StrokeThickness = 10 };
+            this.SelectedFill = new MapShapeFill() { Stroke = Brushes.Black, StrokeThickness = 10 };
         }
 
 
